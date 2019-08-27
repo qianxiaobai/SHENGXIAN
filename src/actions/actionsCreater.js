@@ -1,5 +1,5 @@
 import {createAction} from "redux-actions"
-import { home_api,centerNav_api } from "@api/home.js"
+import { home_api,centerNav_api,homeDetail_api } from "@api/home.js"
 
 //------homedata
 //同步
@@ -27,9 +27,38 @@ export const centerAsynsAction = ()=>{
     }
 }
 
+// 注册
+export const changeVal = createAction("CHANGEVAL",(val,sign)=>({
+    val,sign
+}))
+//注册时   将this.props传过去
+export const submitVal = createAction("SUBVAL",(val)=>val);
 
 
 
+// 登录
+
+export const loginChangeVal = createAction("LOGINCHANGEVAL",(val,sign)=>({
+    val,sign
+}))
+
+export const loginSubmitVal = createAction("LOGINSUBVAL",(val)=>val)
+
+
+
+
+//homeldeatil
+
+
+export const homedetailAction = createAction("HOMEDETAIL",(val)=>val)
+
+export const homeDetailAsync = ()=>{
+    return async (dispatch) =>{
+        let data = await homeDetail_api();
+        console.log(data)
+        dispatch(homedetailAction(data))
+    }
+}
 
 
 

@@ -25,12 +25,20 @@ const Login = Loadable({
     loader:()=>import("./login"),
     loading:Loading
 })
-
-
+const Register = Loadable({
+    loader:()=>import("./Register"),
+    loading:Loading
+})
+const HomeDetail = Loadable({
+    loader:()=>import("./homedetail/homedetail"),
+    loading:Loading
+})
 export {
     Home,
     Find,
     Order,
     Mine,
-    Login
+    Login,
+    Register,
+    HomeDetail
 }
