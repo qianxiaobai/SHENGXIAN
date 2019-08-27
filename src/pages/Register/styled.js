@@ -44,7 +44,7 @@ input {
       margin: 10px ;5px
 }
 button{
-    width: 100%;
+    width: 90%;
     display: inline-block;
     color: #fff;
     border:0;
@@ -53,7 +53,10 @@ button{
     line-height: 2.75rem;
     border-radius: 3rem;
     background-image: linear-gradient(90deg,#25c949,#4aaa35);}
-    
+.tologin{
+    margin:10px 20px;
+    font-size:14px; 
+}
 i {
   display: inline-block;
   width: 16px;

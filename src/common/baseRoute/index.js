@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Layout from "@layout"
 import {Route} from "react-router-dom";
+import auth from "../auth/index"
  class BaseRoute extends Component {
     render() {
         let {component,path,...rest} = this.props;
@@ -11,4 +12,4 @@ import {Route} from "react-router-dom";
         )
     }
 }
-export default BaseRoute
+export default auth(BaseRoute)

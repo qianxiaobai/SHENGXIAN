@@ -1,11 +1,13 @@
 import {
     Home,
-    Find,
-    Order,
     Mine,
     Login,
     Register,
-    HomeDetail
+    HomeDetail,
+    Cart,
+    Car,
+    Detail,
+    Product
 } from "@pages"
 
 export const tabBarRoute = [
@@ -16,35 +18,37 @@ export const tabBarRoute = [
             flag:true
         },
         name:"首页",
-        icon:"\ue628"
+        icon:"\ue630",
     },
     {
-        path:"/find",
-        component:Find,
+        path:"/cart",
+        component:Cart,
         meta:{
             flag:true
         },
-        name:"发现",
-        icon:"\ue663"
+        name:"分类",
+        icon:"\ue66c"
     },
     {
-        path:"/order",
-        component:Order,
+        path:"/car",
+        component:Car,
         meta:{
-            flag:true
+            flag:true,
+            auth:true
         },
-        name:"订单",
-        icon:"\ue737"
+        name:"购物车",
+        icon:"\ue611"
     },
     {
         path:"/mine",
         component:Mine,
         meta:{
-            flag:true
+            flag:false,
+            auth:true
         },
         name:"我的",
-        icon:"\ue617"
-    }
+        icon:"\ue67a"
+    },
 ]
 
 export const noTabBarRoute = [
@@ -71,6 +75,24 @@ export const noTabBarRoute = [
                 flag:false
             },
             name:"首页详情",
+        },
+        {
+            path:"/detail",
+            component:Detail,
+            meta:{
+                flag:false,
+                auth:false
+            },
+            name:"detail",
+        },
+        {
+            path:"/product",
+            component:Product,
+            meta:{
+                flag:false,
+                auth:false
+            },
+            name:"Product",
         }
 ]
 

@@ -63,6 +63,8 @@ export default handleActions({
             sessionStorage.setItem("input", JSON.stringify(obj))
             inputState.successshow = true;
             inputState.successVal = "注册成功";
+            inputState.phoneVal = "";
+            inputState.passwordVal = "";
             setTimeout(() => {
                 inputState.successshow = false;
             }, 500);
@@ -86,33 +88,44 @@ export default handleActions({
     LOGINSUBVAL: (state, action) => {
         let loginState = JSON.parse(JSON.stringify(state))
         // console.log(action.payload.history)
-        let obj = JSON.parse(sessionStorage.getItem("input"))
-        if (loginState.phoneLogin === obj.phone && loginState.pwdLogin === obj.pwd) {
-            let phone = loginState.phoneLogin
-            let token = jwt.sign({
-                phone
-            }, "SHIXING", {
-                expiresIn: 5000
-            });
-            sessionStorage.setItem("num", token);
+        if(sessionStorage.getItem("input")){
+            let obj = JSON.parse(sessionStorage.getItem("input"))
+            if (loginState.phoneLogin === obj.phone && loginState.pwdLogin === obj.pwd) {
+                let phone = loginState.phoneLogin
+                let token = jwt.sign({
+                    phone
+                }, "SHIXING", {
+                    expiresIn: 5000
+                });
+                sessionStorage.setItem("num", token);
+                loginState.phoneLogin = "";
+                loginState.pwdLogin = "";
+                loginState.successshow = true;
+                loginState.successVal = "登录成功";
+                setTimeout(() => {
+                    loginState.successshow = false;
+                }, 500);
+                action.payload.history.push("/home")///////
+            } else {
+                loginState.phoneLogin = "";
+                loginState.pwdLogin = "";
+                loginState.successshow = true;
+                loginState.successVal = "用户信息错误";
+                setTimeout(() => {
+                    loginState.successshow = false;
+                }, 500);
+                
+            }
+        }else{
             loginState.phoneLogin = "";
             loginState.pwdLogin = "";
             loginState.successshow = true;
-            loginState.successVal = "登录成功";
+            loginState.successVal = "用户不存在";
             setTimeout(() => {
                 loginState.successshow = false;
             }, 500);
-            action.payload.history.push("/home")///////
-        } else {
-            loginState.phoneLogin = "";
-            loginState.pwdLogin = "";
-            loginState.successshow = true;
-            loginState.successVal = "用户信息错误";
-            setTimeout(() => {
-                loginState.successshow = false;
-            }, 500);
-            
         }
+       
 
         return loginState;
     }
