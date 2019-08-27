@@ -9,13 +9,13 @@ import { home_api } from "@api/home.js"
 import { mapStateToProps, mapDispatchToProps } from "./connect"
 import { connect } from "react-redux"
 import BScrollComponent from "@common/bscroll/index"
-
+import CountDown from "@components/home/countdown/countdown"
 class Home extends Component {
     constructor(props) {
         super(props);
     }
     render() {
-        let { arr, arr0, arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13, arr14, arr15,navListLeft,navListRight} = this.props
+        let { arr, arr0, arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13, arr14, arr15} = this.props
         return (
             <Fragment>
                 <Header />
@@ -72,6 +72,7 @@ class Home extends Component {
                             </section>
 
                             {/*  */}
+                            <CountDown  title="限时抢购"  timeCount="2019/8/31 00:00:00"/>
                             <SwiperList swiperListArr={arr9} />
                             {/*  */}
 

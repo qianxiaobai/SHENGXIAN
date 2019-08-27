@@ -3,7 +3,9 @@ import {
     Find,
     Order,
     Mine,
-    Login
+    Login,
+    Register,
+    HomeDetail
 } from "@pages"
 
 export const tabBarRoute = [
@@ -61,7 +63,15 @@ export const noTabBarRoute = [
             flag:false
         },
         name:"注册",
-    }
+    },
+    {
+        path:"/homedetail",
+            component:HomeDetail,
+            meta:{
+                flag:false
+            },
+            name:"首页详情",
+        }
 ]
 
 export const routeConfig = tabBarRoute.concat(noTabBarRoute)

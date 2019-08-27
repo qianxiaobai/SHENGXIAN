@@ -1,6 +1,6 @@
 
 
-import {homeAsynsAction,centerAsynsAction}  from "@actions/actionsCreater"
+import {homeAsynsAction,centerAsynsAction,homeDetailAsync}  from "@actions/actionsCreater"
  
 export const  mapStateToProps =(state)=>({
     navListLeft :state.homeStore.navListLeft,
@@ -30,6 +30,7 @@ export const  mapDispatchToProps =(dispatch)=>({
     homeState(){
         dispatch(homeAsynsAction())
         dispatch(centerAsynsAction())
+        dispatch(homeDetailAsync())
     },
 
     clickHandler(){
