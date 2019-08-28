@@ -16,17 +16,14 @@ export const mapDispatchToProps = (dispatch)=>({
     },
 
     handleToggleTypes0(sourcetype,index){
-       
         dispatch(goodsTypesAsyncAction0(sourcetype,index))
     },
 
     handleToggleTypes(sourcetype,Id,index){
-      
         dispatch(goodsTypesAsyncAction(sourcetype,Id,index))
     },
     clickGoods(props,Id,name){
-        console.log(props)
-        props.history.push({pathname:"/detail",query:{name:name}})
+        props.history.push({pathname:"/detail",query:{name:name,Id:Id}})
         dispatch(goodsDetailsAsyncAction(props,Id,name))
     }
 })

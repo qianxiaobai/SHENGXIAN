@@ -23,7 +23,6 @@ class Cart extends Component {
         this.state.indexActive = this.props.indexActive
         this.state.goodsList = this.props.goodsList
         let { type, goodsList, indexActive, arr, Id } = this.state;
-        console.log()
         return (
             <BodyWrapper>
                 <Header val='满99元减50元，月末亏本清仓' />

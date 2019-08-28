@@ -10,7 +10,7 @@ export default class componentName extends Component {
           <Redirect from='/' to='/home' exact />
           {
             routeConfig.map((item,index)=>(
-              <BaseRoute key={index} {...item}/>
+              <BaseRoute key={index} {...item} ids='12'/>
            ))
           }
         </Switch>
