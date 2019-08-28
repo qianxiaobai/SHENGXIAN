@@ -26,6 +26,7 @@ export const mapDispatchToProps = (dispatch)=>({
     },
     clickGoods(props,Id,name){
         console.log(props)
+        console.log(name)
         props.history.push({pathname:"/detail",query:{name:name}})
         dispatch(goodsDetailsAsyncAction(props,Id,name))
     }

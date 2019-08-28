@@ -7,7 +7,8 @@ import {
     Cart,
     Car,
     Detail,
-    Product
+    Product,
+    Search
 } from "@pages"
 
 export const tabBarRoute = [
@@ -93,6 +94,15 @@ export const noTabBarRoute = [
                 auth:false
             },
             name:"Product",
+        },
+        {
+            path:"/search",
+            component:Search,
+            meta:{
+                flag:false,
+                auth:false
+            },
+            name:"Search",
         }
 ]
 
