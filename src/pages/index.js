@@ -6,13 +6,13 @@ const Home = Loadable({
     loading:Loading
 })
 
-const Find = Loadable({
-    loader:()=>import("./find"),
+const Cart = Loadable({
+    loader:()=>import("./cart"),
     loading:Loading
 })
 
-const Order = Loadable({
-    loader:()=>import("./order"),
+const Car = Loadable({
+    loader:()=>import("./car"),
     loading:Loading
 })
 
@@ -33,12 +33,23 @@ const HomeDetail = Loadable({
     loader:()=>import("./homedetail/homedetail"),
     loading:Loading
 })
+
+const Detail = Loadable({
+    loader:()=>import("./detail"),
+    loading:Loading
+})
+const Product = Loadable({
+    loader:()=>import("./product"),
+    loading:Loading
+})
 export {
     Home,
-    Find,
-    Order,
     Mine,
     Login,
     Register,
-    HomeDetail
+    HomeDetail,
+    Cart,
+    Car,
+    Detail,
+    Product
 }

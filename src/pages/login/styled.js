@@ -44,7 +44,8 @@ input {
       margin: 10px ;5px
 }
 button{
-    width: 100%;
+    display:block;
+    width: 90%;
     display: inline-block;
     color: #fff;
     border:0;
@@ -53,7 +54,10 @@ button{
     line-height: 2.75rem;
     border-radius: 3rem;
     background-image: linear-gradient(90deg,#25c949,#4aaa35);}
-    
+.tologin{
+    margin:10px 20px;
+    font-size:14px; 
+}
 i {
   display: inline-block;
   width: 16px;
@@ -74,15 +78,15 @@ i {
 .success{
     position: absolute;
     width:90%;
-        left:0;
-        right:0;
-        margin: 0 auto;
-        top:15%;
-        height:50px;
-        font-size:20px;
-            background:#fff;
-                color:#25c949;
-                border:1px solid #25c949;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    top:15%;
+    height:50px;
+    font-size:20px;
+    background:#fff;
+    color:#25c949;
+    border:1px solid #25c949;
     box-shadow: 5px  5px  5px 5px  #ccc;
     text-align: center;
     line-height:50px;

@@ -19,7 +19,3 @@ module.exports = (app)=>{
         }
     }))
 }
-
-// https://api1.34580.com/sh/flash/getPageFlashSaleProducts?sourcetype=9&PageIndex=0
-
-// https://wechatx.34580.com/topicInfo/product?cityFlag=sh

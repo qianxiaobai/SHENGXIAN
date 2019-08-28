@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Find extends Component {
+export default class Order extends Component {
     render() {
         return (
             <div>
-                Find
+                car
             </div>
         )
     }

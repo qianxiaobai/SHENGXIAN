@@ -20,7 +20,7 @@ class Register extends Component {
                     <p><input type="text" value={passwordVal} placeholder="输入密码" onChange={this.props.changeHandler.bind(this, "pwd")} />
                     </p>
                     <button onClick={this.props.clickSubmit.bind(this, { ...this.props })}>注册</button>
-                    <span>已有账号，<a href="#/login">去登录？</a> </span>
+                    <p className="tologin"><span>已有账号，<a href="#/login">去登录？</a></span></p>
                 </div>
 
                 <div className="tips">

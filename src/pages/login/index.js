@@ -20,7 +20,7 @@ class Login extends Component {
             
                     <p><input type="text" value={pwdLogin} placeholder="输入密码"  onChange={this.props.changeHandler.bind(this,"pwd")} /></p>
                      <button onClick={this.props.clickSubmit.bind(this,{...this.props})}>登录</button>
-                     <span>没有账号，<a href="#/register">去注册？</a> </span>
+                    <p className="tologin"><span>没有账号，<a href="#/register">去注册？</a> </span></p>
                 </div>
                 
 
