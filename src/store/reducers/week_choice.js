@@ -4,7 +4,7 @@ const defaultState = {
     indexActive:0,
     goodsList:[{Name:'柑橘橙柚'},{Name:'节日礼盒'},{Name:'面膜'},{Name:'低温酸奶'},{Name:'方便菜'},
     {Name:'酸菜'},{Name:'杂粮'},{Name:'零食礼盒'},{Name:'啤酒'},{Name:'水八仙'},{Name:'冰鲜海鲜'}],
-    goodsDetail:[],
+    goodsDetail:JSON.parse(sessionStorage.getItem("goodsDetail")) || [],
     Id:101264,
     productInfo:{},
     productActivityList:[],
@@ -38,6 +38,18 @@ export default handleActions({
         newState.Id=action.payload.Id
         return newState;
     },
+    // ----------------------------搜索跳详情
+    SEARCHDETAIL:(state,action)=>{
+        let newState = JSON.parse(JSON.stringify(state));      
+        console.log(action)
+        newState.goodsDetail=action.payload.Data.SourceData;
+       
+        sessionStorage.setItem("goodsDetail", JSON.stringify(newState.goodsDetail))
+        console.log(newState.goodsDetail)
+        return newState;
+    },
+
+    // ----------------------------------------------------
     'GOODS_PX':(state,action)=>{
         let newState = Object.assign({},state);    
         newState.goodsDetail=action.payload.val.Data.SourceData;
