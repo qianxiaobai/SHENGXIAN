@@ -43,5 +43,18 @@
     "customize-cra": "^0.5.0",
     "http-proxy-middleware": "^0.19.1",
     "react-app-rewired": "^2.1.3"
-  }
+  },
+  "description": "- `react-router-dom`\r - `redux`\r - `react-redux`\r - `redux-thunk`\r - `redux-actions`\r - `高阶组件`\r - `styled-components`\r - `react-loadable`\r - `whatwg-fetch`",
+  "main": "config-overrides.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qianxiaobai/SHENGXIAN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qianxiaobai/SHENGXIAN/issues"
+  },
+  "homepage": "https://github.com/qianxiaobai/SHENGXIAN#readme"
 }

@@ -12,15 +12,13 @@ class SwiperList extends Component {
         return (
             <SwiperListStyle>
                 <div className="mn-card floor-padding">
-                    <div className="mn-card-item home-floor-slide-products">     
+                    <div className="mn-card-item home-floor-slide-products">
                         <div className="home-floor-slide-products-container">
-                            <div className="aaaaaa">
                             {
                                 swiperListArr.map((item, index) => (
-                                    
                                     <div className="home-floor-slide-products-item intersection-product-item"  key={index} >
                                         <div className="freshes-image productslice-img" onClick={this.props.clickHandler.bind(this,item.ProductId)}>
-                                            <img className="freshes-image-source is-active" src="http://picpro-sz.34580.com/sh/ImageUrl/532949/500.jpeg" />
+                                            <img className="freshes-image-source is-active" src="http://picpro-sz.34580.com/sh/ImageUrl/157996/160.jpeg" />
                                         </div>
                                         <div className="name">{item.ProductName}</div>
                                         <div className="activity-label">
@@ -38,7 +36,6 @@ class SwiperList extends Component {
                                     </div>
                                 ))
                             }
-                        </div>
                         </div>
                     </div>
                 </div>

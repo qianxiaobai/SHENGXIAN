@@ -1,4 +1,4 @@
-import {goodsPXAsyncAction} from "@actions/actionCreator"
+import {goodsPXAsyncAction,goodsProductAsyncAction} from "@actions/actionCreator"
 
 
 
@@ -6,7 +6,11 @@ export const mapStateToProps=(state)=>({
     indexActive:state.week.indexActive,
     goodsList:state.week.goodsList,
     goodsDetail:state.week.goodsDetail,
-    Id:state.week.Id
+    Id:state.week.Id,
+    productInfo:state.week.productInfo,
+    productActivityList:state.week.productActivityList,
+    productInfoServiceList:state.week.productInfoServiceList,
+   
 })
 export const mapDispatchToProps = (dispatch)=>({
     handlerToggle(index,Id,ids){
@@ -14,8 +18,10 @@ export const mapDispatchToProps = (dispatch)=>({
            index:index
        })
        dispatch(goodsPXAsyncAction(Id,ids))
-
-
     },
+    handlerProduct(props,ssuId){
+        props.history.push({pathname:"/product",query:{ssuId}})
+        dispatch(goodsProductAsyncAction(ssuId))
+     },
 
 })

@@ -83,7 +83,7 @@ font-size: 1.125rem;
 font-size: .8125rem;
     color: #999;
     line-height: 1;
-
+    text-decoration: line-through;    
     width:100%;
         display: block;
 }

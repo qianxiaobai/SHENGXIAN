@@ -34,12 +34,13 @@ export const  mapDispatchToProps =(dispatch)=>({
     },
 
     clickHandler(){
-
-        let height = this.refs.height.getBoundingClientRect().top
-        this.refs.scrolltop.scroll.scrollTo(0,-height)
-        console.log(this.refs.height.getBoundingClientRect().top)
-     
-    },
+        // let div =this.refs.wrapscroll
+        // console.log(div.querySelector(".wrapscroll"))
+        // console.log(div.offsetTop)
+        // // div.offsetTop=0px;
+        // console.log(this.refs.scrolltop.scroll.scrollTo)
+        // this.refs.scrolltop.scroll.scrollTo(0,-div.offsetTop)
+    }
 
 
 

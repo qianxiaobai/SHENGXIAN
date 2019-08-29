@@ -4,14 +4,18 @@ export default (PageWrapper)=>{
   return class  extends Component {
         render() {
             let {path,meta} = this.props;
-            // console.log(this.props)
+            console.log(this.props)
             if(meta.auth && path!="/login"){
+         console.log(111111)
                 if(!sessionStorage.getItem("num")){
                     return <Redirect to="/login"/>
+                }else{
+                    return <PageWrapper {...this.props}/>
                 }
+               
             }
-            // console.log(9999)
-             return <PageWrapper {...this.props}/>             
+            
+             return <PageWrapper {...this.props}  />                
         }
     }
 }
