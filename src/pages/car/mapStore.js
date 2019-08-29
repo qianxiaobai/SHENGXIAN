@@ -1,4 +1,5 @@
-import {InsertCarAction,GoodsAddAction,GoodsReduceAction,GoodsSDAction} from "@actions/actionCreator"
+import {InsertCarAction,GoodsAddAction,GoodsReduceAction,
+   GoodsSDAction,GoodsSelectedAction,GoodsSelelctedAllAction} from "@actions/actionCreator"
 
 
 
@@ -11,7 +12,10 @@ export const mapStateToProps=(state)=>({
     productActivityList:state.week.productActivityList,
     productInfoServiceList:state.week.productInfoServiceList,
     carList:state.week.carList,
-    n:state.week.n
+    n:state.week.n,
+    selectedAll:state.week.selectedAll,
+    goodsNum:state.week.goodsNum,
+    goodsPrice:state.week.goodsPrice
 })
 export const mapDispatchToProps = (dispatch)=>({
     handlerInsertCar(Info){
@@ -26,6 +30,14 @@ export const mapDispatchToProps = (dispatch)=>({
      handlerChangeInput(index,e){
         let num=e.target.value;
         dispatch(GoodsSDAction(index,num))
+     },
+     //选择框
+     handlerSelected(index){
+      dispatch(GoodsSelectedAction(index))
+     },
+     handlerSelectedAll(){
+           dispatch(GoodsSelelctedAllAction())     
      }
+    
 
 })

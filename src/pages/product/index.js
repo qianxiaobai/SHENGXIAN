@@ -2,22 +2,27 @@ import React, { Component } from 'react'
 import {GoodsSpeDetailWrapper} from "./styled"
 import {connect} from "react-redux";
 import {mapStateToProps,mapDispatchToProps} from "./mapStore"
+import Swiper from "@common/swiper"
 class Product extends Component {
     constructor(props){
         super(props);
         this.state={
             productInfo:{},
             flag:false,
-            num:1
+            num:1,
+            banner:[
+                'http://picpro-sz.34580.com/sh/ImageUrl/557018/800.jpeg',
+                'http://picpro-sz.34580.com/sh/ImageUrl/557017/800.jpeg',
+                'http://picpro-sz.34580.com/sh/ImageUrl/557016/800.jpeg'
+            ]
         }   
     }
     render() {
         let {flag}=this.state;
-     let {productInfo,productActivityList,productInfoServiceList}=this.props
+     let {productInfo,productActivityList,productInfoServiceList,goodsNum}=this.props
         return (
             <GoodsSpeDetailWrapper>
                 <div className='TC' style={{display:flag?'block':'none'}}>
-                  
                     <div>操作成功</div>
                     <div>成功加入购物车</div>
                 </div>
@@ -36,6 +41,7 @@ class Product extends Component {
                     <div className='mn-scroller-contents'>
                         <div className='mn-section product-detail'>
                             <div className='mn-carousel has-gray-background'>
+                                <Swiper val={this.state.banner}/>
                             </div>
                             <div className='mn-card'>
                                 <div className='product-information-title'>{productInfo.productName}</div>
@@ -112,6 +118,7 @@ class Product extends Component {
                         <div className='add-collect'>
                             <p className="iconfont">&#xe611;</p>
                             <p onClick={this.handlerToggleCar.bind(this)}>购物车</p>
+                            <span  className="tag">{goodsNum}</span>
                         </div>
                     </div>
                     <button onClick={this.props.handlerInsertCar.bind(this,productInfo,flag)}>加入购物车</button>

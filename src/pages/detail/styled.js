@@ -107,6 +107,17 @@ height:100%;
             height:50px;
             border-radius:50%;
             background:rgba(228, 83, 38,0.8);
+            position:relative
+            span{
+                position: absolute;
+                top: -5px;
+                left: 25px;
+                background-color: #f05423;
+                border: 1px solid #fff;
+                border-radius: 10px;
+                padding: 0 5px;
+                font-size: 10px;
+            }
             .icon{
                 font-size:23px;
                 padding-left:12px;

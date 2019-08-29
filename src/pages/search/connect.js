@@ -28,7 +28,7 @@ export const mapDispatchToProps = (dispatch) => ({
 
     },
     clickHotHandler(name) {
-        console.log(this.props)
+        console.log(name)
         dispatch(searchDetailAsync(name))
         this.props.history.push({pathname: "/detail",query: {name:name}})
     },
@@ -43,7 +43,7 @@ export const mapDispatchToProps = (dispatch) => ({
         dispatch(searchChangeAsyncAction(value))
     },
     //搜索按钮
-    sousuoHandler(name) {
+    sousuoHandler() {
         dispatch(sousuobtn())
         // this.props.history.goBack()
     },
@@ -57,6 +57,7 @@ export const mapDispatchToProps = (dispatch) => ({
     },
 
     clickMHsousuo(name) {
+        console.log(name)
         dispatch(sousuobtn())
         dispatch(searchDetailAsync(name))
         this.props.history.push({pathname: "/detail",query: {name:name}})
