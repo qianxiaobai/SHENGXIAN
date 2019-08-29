@@ -37,7 +37,4 @@ export default class BScrollComponent extends Component {
         this.scroll.finishPullDown()
         this.scroll.refresh();
     }
-
-
-    
 }

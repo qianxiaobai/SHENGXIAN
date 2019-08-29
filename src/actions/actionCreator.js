@@ -1,5 +1,5 @@
 import {createAction} from "redux-actions"
-import {goodsList,goodsList1,goodsdetail} from "@api/week"
+import {goodsList,goodsList1,goodsdetail,goodsProduct} from "@api/week"
 
 export const changeindex= createAction("CHANGE-INDEX",(index)=>({
     index:index
@@ -39,3 +39,17 @@ export const goodsPXAsyncAction= (Id,ids)=>{
         dispatch(goodsPXAction(data))
     }
 }
+//每个商品的详情页面
+export const goodsProductAction = createAction("GOODS_Product",(val)=>({val}));
+export const goodsProductAsyncAction=(ssuId)=>{
+    return async (dispatch)=>{
+        let data = await goodsProduct(ssuId);
+        dispatch(goodsProductAction(data))
+    }
+}
+
+export const InsertCarAction=createAction("GOODS_INSERT",(val)=>({val}))
+
+export const GoodsAddAction=createAction('GODOS_ADD',(index,num)=>({index,num}))
+export const GoodsReduceAction=createAction('GODOS_REDUCE',(index,num)=>({index,num}))
+export const GoodsSDAction=createAction('GODOS_SD',(index,num)=>({index,num}))

@@ -4,7 +4,6 @@ export const BodyWrapper = styled.div`
 width:100%;
 height:100%;
 padding-bottom:56px;
-background:#fff;
 `
 export const TabBarWrapper = styled.div`
    position:fixed;

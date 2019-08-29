@@ -23,9 +23,8 @@ class Home extends Component {
                     {/* 头部 */}
                     {/* ---------------------------- */}
                     <HomeStyle>
-                        <div  >
-                        <BScrollComponent ref="scrolltop" >
-                            <div ref="height">
+                        <div ref="wrapscroll"  className="wrapscroll">
+                        <BScrollComponent ref="scrolltop">
                             {/*  */}
 
                             <Swipers array={arr} />
@@ -60,7 +59,7 @@ class Home extends Component {
                             <div>
 
                                 <div className="home-shortcunicons-animated"><img
-                                    src="http://pic2.34580.cn/group1/M00/E0/BE/wKgNYl1kbkWABjwFAAM6tC4CyE4614.gif" />
+                                    src="http://pic2.34580.cn/group1/M00/F2/1A/wKgNY11eg_CACCV5AAJTRvB_SBU275.gif" />
                                 </div>
 
                             </div>
@@ -150,15 +149,14 @@ class Home extends Component {
                             </div>
                             {/*  */}
                             <Swipers array={arr7} />
-                            <SwiperList swiperListArr={arr13} />
+                            <SwiperList swiperListArr={arr9} />
                             {/*  */}
                             <img src="https://wechatx.34580.com/static/img/home_bot_logo.61ac9c6.png" className="home-bottom-logo is-download"></img>
-                            </div>
                         </BScrollComponent>
                         </div>
-                        <div className="rightbotNav" onClick={this.props.clickHandler.bind(this)}>
+                        {/* <div className="rightbotNav" onClick={this.props.clickHandler.bind(this)}>
                             <span>︿</span>
-                        </div>
+                        </div> */}
                     </HomeStyle>
                 </Page>
             </Fragment>
