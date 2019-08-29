@@ -1,5 +1,5 @@
 import {createAction} from "redux-actions"
-import { home_api,centerNav_api,homeDetail_api } from "@api/home.js"
+import { home_api,centerNav_api,homeDetail_api,search_api,hotSearch_api} from "@api/home.js"
 
 //------homedata
 //同步
@@ -55,17 +55,40 @@ export const homedetailAction = createAction("HOMEDETAIL",(val)=>val)
 export const homeDetailAsync = ()=>{
     return async (dispatch) =>{
         let data = await homeDetail_api();
-        console.log(data)
+        // console.log(data)
         dispatch(homedetailAction(data))
     }
 }
 
 
+//search
+export const searchAction = createAction("SEARCH",(val)=>val)
+
+export const searchAsyncAction=()=>{
+    return async (dispatch) =>{
+        let data = await hotSearch_api()
+        dispatch(searchAction(data))
+    }
+}
+
+export const changeAction = createAction("CHANGE",(val)=>val)
 
 
+export const searchchangeAction = createAction("SEARCHCHANGE",(value)=>value)
+export const searchChangeAsyncAction=(value)=>{
+    return async (dispatch) =>{
+        let timer;
+        clearTimeout(timer)
+            timer = setTimeout( async ()=>{
+            let data = await search_api(9,value,10)
+            dispatch(searchchangeAction(data))
+        },500)
+    }
+}
 
-
-
-
-
-
+//搜索按钮
+export const sousuobtn = createAction("SEARCHBTN")
+//删除
+export const deldetliAction=createAction("DELETELI",(index)=>index)
+// 清空搜索历史
+export const deleteAllAction = createAction("DELETEALL")

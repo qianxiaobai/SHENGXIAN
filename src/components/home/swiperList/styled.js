@@ -7,15 +7,26 @@ export const SwiperListStyle = styled.div`
     background:#FFF
 }
 .mn-card-item {
-    display: flex;
+   display:flex;
     padding: 1rem;
     align-items: center;
 }
 .home-floor-slide-products-container{
-    display: flex;
-    overflow: hidden;
     overflow-x: scroll;
 }
+.aaaaaa{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
 .home-floor-slide-products-item {
     width: 105px;
     display: flex;

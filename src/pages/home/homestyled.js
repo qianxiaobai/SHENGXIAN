@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const HomeStyle =styled.div`
 
-.sell-point.is-iphone5 {
+.is-iphone5 {
     padding: .5rem .4rem;
 }
 
@@ -22,7 +22,7 @@ export const HomeStyle =styled.div`
     justify-content: center;
 }
 
-.sell-point.is-iphone5 .point-img {
+.is-iphone5 .point-img {
     width: 1rem;
     margin-right: .125rem;
 }
