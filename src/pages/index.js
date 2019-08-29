@@ -42,6 +42,10 @@ const Product = Loadable({
     loader:()=>import("./product"),
     loading:Loading
 })
+const Search = Loadable({
+    loader:()=>import("./search/search.js"),
+    loading:Loading
+})
 export {
     Home,
     Mine,
@@ -51,5 +55,6 @@ export {
     Cart,
     Car,
     Detail,
-    Product
+    Product,
+    Search
 }
