@@ -9,7 +9,8 @@ export const mapStateToProps=(state)=>({
     Id:state.week.Id,
     productInfo:state.week.productInfo,
     productActivityList:state.week.productActivityList,
-    productInfoServiceList:state.week.productInfoServiceList
+    productInfoServiceList:state.week.productInfoServiceList,
+    goodsNum:state.week.goodsNum,
 })
 export const mapDispatchToProps = (dispatch)=>({
     handlerInsertCar(Info,flag){

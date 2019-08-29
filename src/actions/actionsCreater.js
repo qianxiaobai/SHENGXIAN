@@ -1,5 +1,5 @@
 import {createAction} from "redux-actions"
-import { home_api,centerNav_api,homeDetail_api,search_api,hotSearch_api,searchdetail_api} from "@api/home.js"
+import { home_api,centerNav_api,homeDetail_api,search_api,hotSearch_api} from "@api/home.js"
 
 //------homedata
 //同步
@@ -92,15 +92,3 @@ export const sousuobtn = createAction("SEARCHBTN")
 export const deldetliAction=createAction("DELETELI",(index)=>index)
 // 清空搜索历史
 export const deleteAllAction = createAction("DELETEALL")
-
-
-
-export const searchdetailAction = createAction("SEARCHDETAIL",(data)=>data)
-
-export const searchDetailAsync = ()=>{
-    return async(dispatch)=>{
-        let data = await searchdetail_api()
-        console.log(data)
-        dispatch(searchdetailAction(data))
-    }
-}

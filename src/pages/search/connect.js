@@ -4,11 +4,8 @@ import {
     searchChangeAsyncAction,
     sousuobtn,
     deldetliAction,
-    deleteAllAction,
-    searchDetailAsync
+    deleteAllAction
 } from "@actions/actionsCreater"
-// import {goodsDetailsAsyncAction} from "@actions/actionCreator"
-
 
 export const mapStateToProps = (state) => ({
     n: state.searchStore.n,
@@ -27,10 +24,14 @@ export const mapDispatchToProps = (dispatch) => ({
         dispatch(searchAsyncAction())
 
     },
-    clickHotHandler(name) {
+    clickHotHandler(id) {
         console.log(this.props)
-        dispatch(searchDetailAsync(name))
-        this.props.history.push({pathname: "/detail",query: {name:name}})
+        this.props.history.push({
+            pathname: "/detail",
+            query: {
+                id: id
+            }
+        })
     },
     //inputval
     changeHandler(e) {
@@ -43,9 +44,8 @@ export const mapDispatchToProps = (dispatch) => ({
         dispatch(searchChangeAsyncAction(value))
     },
     //搜索按钮
-    sousuoHandler(name) {
+    sousuoHandler() {
         dispatch(sousuobtn())
-        // this.props.history.goBack()
     },
     //删除
     deleteli(index) {
@@ -55,10 +55,9 @@ export const mapDispatchToProps = (dispatch) => ({
     deleteAll() {
         dispatch(deleteAllAction())
     },
-
-    clickMHsousuo(name) {
+    clickMHsousuo(val) {
+        console.log(val)
         dispatch(sousuobtn())
-        dispatch(searchDetailAsync(name))
-        this.props.history.push({pathname: "/detail",query: {name:name}})
+        this.props.history.push({pathname: "/detail",query: {val:val}})
     }
 })

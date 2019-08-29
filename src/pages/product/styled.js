@@ -72,6 +72,16 @@ position:relative;
             flex-direction:column;
             justify-content: center;
             align-items: center;
+            position:relative;
+            .tag{
+                position: absolute;
+                top: 3px;
+                right: 0;
+                color: #fff;
+                background-color: #f05423;
+                padding: 2px 5px;
+                border-radius:50%;
+            }
             .iconfont{
                 font-size:20px
             }

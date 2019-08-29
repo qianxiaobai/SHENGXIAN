@@ -13,6 +13,7 @@ class Detail extends Component {
 
     render() {
         let {index}=this.state
+        let {goodsNum}=this.props
         return (
             <DetailWrapper>
                 <Header val='搜索食行生鲜美食'/>
@@ -26,17 +27,17 @@ class Detail extends Component {
                     <div className='mn-scroller-contents'>
                         {
                             this.props.goodsDetail.map((item,index)=>(
-                                <div className='goods' key={index} onClick={this.props.handlerProduct.bind(this,this.props,item.ProductId)}>
-                                    <img className="freshes-image-source" src="http://picpro-sz.34580.com/sh/ImageUrl/559982/500.jpeg"></img>
+                                <div className='goods' key={index} >
+                                    <img className="freshes-image-source" onClick={this.props.handlerProduct.bind(this,this.props,item.ProductId)} src="http://picpro-sz.34580.com/sh/ImageUrl/559982/500.jpeg"></img>
                                     <div className="title">{item.ProductName}</div>
                                     <div  className="info">
                                         <div className="unit">{item.PvStandard}</div> 
                                         <div className="price">
-                                            <p>¥{item.PeriodMoney}  {item.ProductId}</p>
+                                            <p>¥{item.PeriodMoney} {item.ProductId}</p>
                                             <div className='car'> 
-                                            <div className='iconfont'>&#xe611;</div>
-                                                </div>
-                                            </div> 
+                                                <div className='iconfont' onClick={this.props.handlerDetailInsertCar.bind(this)}>&#xe611;</div>
+                                            </div>
+                                        </div> 
                                     </div>
                                     
                                 </div>
@@ -46,6 +47,7 @@ class Detail extends Component {
                     <div className='cartbutton'>
                         <div className='circle'>
                             <div className='iconfont icon'>&#xe611;</div>
+                            <span>{goodsNum}</span>
                         </div>
                     </div>
                 </div>

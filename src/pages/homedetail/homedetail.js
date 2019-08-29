@@ -6,14 +6,14 @@ import { connect } from "react-redux"
 class HomeGoods extends Component {
     render() {
         let { homeDetailList } = this.props
-        console.log(homeDetailList)
+        // console.log(homeDetailList)
         return (
             <HomeGoodsStyle>
                 <CountDown title="正在抢购中" timeCount="2019/8/31 00:00:00" />
                 <ul>
                     {
                         homeDetailList.map((item, index) => (
-                            <li key={index}  onClick={this.props.sendinfo.bind(this,item.ProductName,item.ProductId)}>
+                            <li key={index}>
                                 <img src="http://picpro-sz.34580.com/sh/ImageUrl/157996/160.jpeg" alt="" />
                                 <div className="divright">
                                     <h4>{item.ProductName}</h4>

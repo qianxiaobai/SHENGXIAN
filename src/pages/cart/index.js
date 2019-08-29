@@ -1,9 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component} from 'react'
 import { sort, goodsList } from "@api/week"
-import { TabBarWrapper, BodyWrapper, BodyWrapper1 } from './styled'
+import {BodyWrapper, BodyWrapper1 } from './styled'
 import Header from "@components/header"
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from "./mapStore"
+
+import Swiper from "@common/swiper"
 class Cart extends Component {
     constructor(props) {
         super(props);
@@ -13,15 +15,19 @@ class Cart extends Component {
                 101429, 100935, 100996, 100625, 101371, 101017, 101310, 101377],
             type: [],
             goodsList: [],
-            indexActive: this.props.indexActive
+            indexActive: this.props.indexActive,
+            banner: [
+                'http://pic2.34580.cn/group1/M00/E1/3E/wKgNYl1lcMCABrk9AAD0GsbG3Hc518.jpg',
+               'http://pic2.34580.cn/group1/M00/9B/9E/wKgNYlzcNvWAKGh9AAFi3QgY2DI471.jpg'
+               
+              ]
         }
-      
-      
-
+    
     }
     render() {
         this.state.indexActive = this.props.indexActive
         this.state.goodsList = this.props.goodsList
+      
         let { type, goodsList, indexActive, arr, Id } = this.state;
         console.log()
         return (
@@ -41,12 +47,15 @@ class Cart extends Component {
                         </div>
                     </div>
                     <div className='category-flex category-contents'>
+                        <div className='category-banner'>
+                            <Swiper val={this.state.banner}/>
+                        </div>
                         {
                             arr.map((item, index) => (
-                                <div key={index} style={{ display: indexActive == (index) ? 'block' : 'none' }}>
-                                    <div className='category-banner'></div>
+                                <div key={index} style={{ display: indexActive === (index) ? 'block' : 'none' }}>
+                                  
                                     <div className='category-section'>
-                                        <div style={{ display: indexActive == 0 ? 'block' : 'none' }}>
+                                        <div style={{ display: indexActive === 0 ? 'block' : 'none' }}>
                                             <div className='command' >
                                                 {
                                                     this.props.goodsList.map((item1, index1) => (

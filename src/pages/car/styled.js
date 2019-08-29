@@ -109,7 +109,8 @@ position:absolute
                         margin-right:10px;
                     }
                     .addition-item-info{
-                        flex:1
+                        flex:1;
+                        overflow:hidden
                         .card-title-wrapper{
                             color:#333;
                             font-size:14px;
