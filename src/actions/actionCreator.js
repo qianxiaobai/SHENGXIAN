@@ -35,8 +35,8 @@ export const goodsDetailsAsyncAction = (props,Id,name)=>{
 export const goodsPXAction = createAction("GOODS_PX",(val)=>({val}));
 export const goodsPXAsyncAction= (Id,ids)=>{
     return async (dispatch)=>{
-        let data = await goodsdetail(Id,ids);
-        dispatch(goodsPXAction(data))
+            let data = await goodsdetail(Id,ids);
+            dispatch(goodsPXAction(data))
     }
 }
 //每个商品的详情页面

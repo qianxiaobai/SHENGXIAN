@@ -24,14 +24,12 @@ export const mapDispatchToProps = (dispatch) => ({
         dispatch(searchAsyncAction())
 
     },
-    clickHotHandler(id) {
-        console.log(this.props)
-        this.props.history.push({
-            pathname: "/detail",
-            query: {
-                id: id
-            }
-        })
+
+    clickHotHandler(name) {
+        console.log(name)
+        dispatch(searchDetailAsync(name))
+        this.props.history.push({pathname: "/detail",query: {name:name}})
+
     },
     //inputval
     changeHandler(e) {
@@ -55,8 +53,10 @@ export const mapDispatchToProps = (dispatch) => ({
     deleteAll() {
         dispatch(deleteAllAction())
     },
-    clickMHsousuo(val) {
-        console.log(val)
+
+    clickMHsousuo(name) {
+        console.log(name)
+
         dispatch(sousuobtn())
         this.props.history.push({pathname: "/detail",query: {val:val}})
     }

@@ -92,3 +92,17 @@ export const sousuobtn = createAction("SEARCHBTN")
 export const deldetliAction=createAction("DELETELI",(index)=>index)
 // 清空搜索历史
 export const deleteAllAction = createAction("DELETEALL")
+
+
+
+
+export const searchdetailAction = createAction("SEARCHDETAIL",(data)=>data)
+
+export const searchDetailAsync = (name)=>{
+    return async(dispatch)=>{
+        let data = await searchdetail_api(name)
+        console.log(data)
+        dispatch(searchdetailAction(data,2))
+    }
+}
+
