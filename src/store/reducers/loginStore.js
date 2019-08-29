@@ -30,6 +30,7 @@ export default handleActions({
     SUBVAL: (state, action) => {
         let inputState = JSON.parse(JSON.stringify(state))
         // console.log(action)
+        if(/^1[356789]\d{9}$/g.test(inputState.phoneVal) && inputState.passwordVal!==""){
         let obj = {
             phone: inputState.phoneVal,
             pwd: inputState.passwordVal
@@ -71,7 +72,19 @@ export default handleActions({
             action.payload.history.push("/login")
             return inputState
         }
-    },
+    }else{
+        inputState.successshow = true;
+        inputState.successVal = "请输入正确的手机号和密码";
+        inputState.phoneVal = "";
+        inputState.passwordVal = "";
+        setTimeout(() => {
+            inputState.successshow = false;
+        }, 500);
+        return inputState
+    }
+},
+
+
     // --------登录
     LOGINCHANGEVAL: (state, action) => {
         let loginState = JSON.parse(JSON.stringify(state))

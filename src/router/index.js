@@ -45,7 +45,7 @@ export const tabBarRoute = [
         component:Mine,
         meta:{
             flag:false,
-            auth:true
+            auth:false
         },
         name:"我的",
         icon:"\ue67a"

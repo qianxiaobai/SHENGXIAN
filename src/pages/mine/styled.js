@@ -13,6 +13,7 @@ color:#fff;
     justify-content: center;
     position: relative;
     margin-right: 10px;
+
 }
 .user-information .name{
     display: flex;
@@ -24,6 +25,10 @@ color:#fff;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: calc(100vw - 32px - 80px - 50px);
+}
+.name-text a {
+    font-size: 1.25rem;
+    color:#fff;
 }
 .user-information .grade{
     width:98px;
@@ -76,10 +81,55 @@ color:#fff;
     top: 4px;
     left: 2px;
 }
-
-
-
-
+.outlogin,.updatapwd{
+    border-bottom: 1px solid #eee;
+    font-size: .875rem;
+    padding: .5rem 1rem;
+    line-height: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    color:#333
+}
+.success{
+    position: absolute;
+    width:90%;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    top:0;
+    height:50px;
+    font-size:20px;
+    color:#fff;
+    text-align: center;
+    line-height:50px;
+    z-index:100;
+background: rgba(255,255,255,0.5)
+    
+    }
+.mineinput{
+    margin:0 auto;
+    border:1px solid #ccc;
+    font-size: .875rem;
+    padding: .2rem .2rem;
+    height:2rem;
+        width:100%;
+    line-height: 1rem;
+    display: flex;
+    justify-content: space-between;
+    
+    color:#333
+    
+    }
+.updatepeddiv{
+    margin-top:40px;
+    width:100%;
+    height:100%;;
+    color:#333
+        border:1px solid #ccc;
+            h3{
+                text-align: center}
+    }
 
 
 
