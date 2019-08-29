@@ -14,9 +14,7 @@ export default class BScrollComponent extends Component {
             click:true,
             tap:true,
             pullUpLoad:true,
-            pullDownRefresh:true,
-            preventDefault: false,   //默认事件
-            mouseWheel: false  //鼠标滚轮
+            pullDownRefresh:true
         })
     }
     handlepullingUp(cb){

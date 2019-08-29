@@ -53,3 +53,8 @@ export const InsertCarAction=createAction("GOODS_INSERT",(val)=>({val}))
 export const GoodsAddAction=createAction('GODOS_ADD',(index,num)=>({index,num}))
 export const GoodsReduceAction=createAction('GODOS_REDUCE',(index,num)=>({index,num}))
 export const GoodsSDAction=createAction('GODOS_SD',(index,num)=>({index,num}))
+export const GoodsSelectedAction=createAction('GOODS_SELECTED',(index)=>({index}))
+export const GoodsSelelctedAllAction=createAction('GOODS_SELECTEDALL')
+
+//detail页面加入购物车
+export const goodsrDetailInsertCarAction=createAction('GOODS_DETAILINSERTCAR')

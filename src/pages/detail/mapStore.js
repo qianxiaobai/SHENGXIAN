@@ -1,4 +1,4 @@
-import {goodsPXAsyncAction,goodsProductAsyncAction} from "@actions/actionCreator"
+import {goodsPXAsyncAction,goodsProductAsyncAction,goodsrDetailInsertCarAction} from "@actions/actionCreator"
 
 
 
@@ -10,6 +10,7 @@ export const mapStateToProps=(state)=>({
     productInfo:state.week.productInfo,
     productActivityList:state.week.productActivityList,
     productInfoServiceList:state.week.productInfoServiceList,
+    goodsNum:state.week.goodsNum,
    
 })
 export const mapDispatchToProps = (dispatch)=>({
@@ -23,5 +24,8 @@ export const mapDispatchToProps = (dispatch)=>({
         props.history.push({pathname:"/product",query:{ssuId}})
         dispatch(goodsProductAsyncAction(ssuId))
      },
+     handlerDetailInsertCar(){
+        dispatch(goodsrDetailInsertCarAction())
+     }
 
 })

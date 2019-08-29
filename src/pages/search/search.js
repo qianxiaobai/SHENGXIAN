@@ -13,7 +13,7 @@ class Search extends Component {
                         <input type="search" placeholder="搜索食行美食"  value={inputVal}  onInput={this.props.changeHandler.bind(this)} onChange={this.props.searchChang.bind(this)}/>
                     </div>
                     <div className="mn-card-body is-suffix is-action">
-                        <button className="mn-btn is-primary is-sm" onClick={this.props.sousuoHandler.bind(this)}>取消</button>
+                        <button className="mn-btn is-primary is-sm" onClick={this.props.sousuoHandler.bind(this)}>搜索</button>
                     </div>
                 </div>
                 {/* 模糊搜索 */}
@@ -33,7 +33,7 @@ class Search extends Component {
                     <ul className="hotul">
                         {
                             hotlist.map((item,index)=>(
-                                <li key = {index} onClick={this.props.clickHotHandler.bind(this,item.HotWordName)}>{item.HotWordName}</li>
+                                <li key = {index} onClick={this.props.clickHotHandler.bind(this,item.Id)}>{item.HotWordName}</li>
                             ))
                         }
                     </ul>
