@@ -1,5 +1,5 @@
 import {createAction} from "redux-actions"
-import { home_api,centerNav_api,homeDetail_api,search_api,hotSearch_api,searchdetail_api} from "@api/home.js"
+import { home_api,centerNav_api,homeDetail_api,search_api,hotSearch_api} from "@api/home.js"
 
 //------homedata
 //同步
@@ -95,6 +95,7 @@ export const deleteAllAction = createAction("DELETEALL")
 
 
 
+
 export const searchdetailAction = createAction("SEARCHDETAIL",(data)=>data)
 
 export const searchDetailAsync = (name)=>{
@@ -104,3 +105,4 @@ export const searchDetailAsync = (name)=>{
         dispatch(searchdetailAction(data,2))
     }
 }
+

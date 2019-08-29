@@ -42,11 +42,13 @@ export default handleActions({
         newState.Id=action.payload.Id
         return newState;
     },
+//-----搜索处理
     SEARCHDETAIL:(state,action)=>{
         let newState = Object.assign({},state);      
         newState.goodsDetail=action.payload.Data.SourceData;
         return newState;
     },
+//------------
     'GOODS_PX':(state,action)=>{
         let newState = Object.assign({},state);    
         newState.goodsDetail=action.payload.val.Data.SourceData;

@@ -4,11 +4,8 @@ import {
     searchChangeAsyncAction,
     sousuobtn,
     deldetliAction,
-    deleteAllAction,
-    searchDetailAsync
+    deleteAllAction
 } from "@actions/actionsCreater"
-// import {goodsDetailsAsyncAction} from "@actions/actionCreator"
-
 
 export const mapStateToProps = (state) => ({
     n: state.searchStore.n,
@@ -27,10 +24,12 @@ export const mapDispatchToProps = (dispatch) => ({
         dispatch(searchAsyncAction())
 
     },
+
     clickHotHandler(name) {
         console.log(name)
         dispatch(searchDetailAsync(name))
         this.props.history.push({pathname: "/detail",query: {name:name}})
+
     },
     //inputval
     changeHandler(e) {
@@ -45,7 +44,6 @@ export const mapDispatchToProps = (dispatch) => ({
     //搜索按钮
     sousuoHandler() {
         dispatch(sousuobtn())
-        // this.props.history.goBack()
     },
     //删除
     deleteli(index) {
@@ -58,8 +56,8 @@ export const mapDispatchToProps = (dispatch) => ({
 
     clickMHsousuo(name) {
         console.log(name)
+
         dispatch(sousuobtn())
-        dispatch(searchDetailAsync(name))
-        this.props.history.push({pathname: "/detail",query: {name:name}})
+        this.props.history.push({pathname: "/detail",query: {val:val}})
     }
 })

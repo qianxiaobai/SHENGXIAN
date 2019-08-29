@@ -1,32 +1,18 @@
 import React, { Component } from 'react'
+import CountDown from "@components/home/countdown/countdown"
 import { MineStyle } from "./styled"
-import { connect } from "react-redux"
-
-
-class Mine extends Component {
-    constructor() {
-        super()
-        this.state = {
-            phone: "",
-            show: true,
-            inputval: "",
-            successVal: "",
-            successshow: false,
-            updateshow:false,
-        }
-    }
+export default class Mine extends Component {
     render() {
-        let { phone, show, inputval,successVal,successshow,updateshow} = this.state
         return (
             <MineStyle>
                 <div className="user-information is-night">
                     <div className="user-information-left">
                         <div className="avatar">
-                            <img src="http://picpro-sz.34580.com/sh/ImageUrl/532949/500.jpeg" alt="" />
+                            <img src="../../../public/img/user.png" alt="" />
                         </div>
                         <div className="information">
                             <div className="name">
-                                <p className="name-text">{show ? <a href="#/login">登录/注册</a> : phone}</p>
+                                <p className="name-text">19853451883</p>
                             </div>
                             <div className="grade-wrapper">
                                 <div className="grade">
@@ -41,103 +27,16 @@ class Mine extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="outlogin" onClick={this.props.outHandler.bind(this)}>退出登录<span>></span></div>
-                <div className="updatapwd" onClick={this.props.updatepwd.bind(this)}>修改密码<span>></span></div>
-                <div className="updatepeddiv" style={{display:updateshow?"block":"none"}}>
-                    <h3>修改密码：</h3>
-                    <input type="text" placeholder="输入密码" className="mineinput" value={inputval} onChange={this.props.input.bind(this)} />
-                    <p className="updatapwd" onClick={this.props.save.bind(this)}>修改</p>
-                    <p className="updatapwd" onClick={this.props.nosave.bind(this)}>取消</p>
-                </div>
-                <div className="success" style={{ display: successshow ? "block" : "none" }}>{successVal}</div>
+
+
+
+
+
             </MineStyle>
         )
     }
-
-    componentDidMount() {
-        if (sessionStorage.getItem("num")) {
-            let phone = JSON.parse(sessionStorage.getItem("input")).phone
-            console.log(phone)
-            this.setState({
-                show: false,
-                phone: phone
-            })
-        }
-    }
 }
-const mapStateToProps = (state) => ({
 
-
-})
-const mapDispatchToProps = (dispatch) => ({
-    outHandler() {
-        sessionStorage.removeItem("num")
-        this.setState({
-            show:true,
-            successshow:true,
-            successVal:"退出成功",
-        })
-        setTimeout(()=>{
-            this.setState({
-                successshow:false,            
-            })
-        },1000)
-    },
-
-    updatepwd() {
-        this.setState({
-            updateshow:true
-        })
-    },
-
-    nosave(){
-        this.setState({
-            updateshow:false
-        })
-    },
-
-    input(e) {
-        let value = e.target.value
-        this.setState({
-            inputval: value
-        })
-
-    },
-
-    save() {
-        if (this.state.inputval !== "") {
-            let user = JSON.parse(sessionStorage.getItem("input"))
-            let obj = {
-                phone: user.phone,
-                pwd: this.state.inputval
-            }
-            sessionStorage.setItem("input", JSON.stringify(obj))
-            this.setState({
-                successshow:true,
-                successVal:"修改成功",
-            })
-            setTimeout(()=>{
-                this.setState({
-                    updateshow:false,
-                    successshow:false,            
-                })
-            },1000)
-        } else {
-            this.setState({
-                successshow:true,
-                successVal:"密码不能为空",
-            })
-            setTimeout(()=>{
-                this.setState({
-                    successshow:false,            
-                })
-            },1000)
-        }
-
-    }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Mine)
 
 
 
