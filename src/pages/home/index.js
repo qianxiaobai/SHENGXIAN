@@ -5,17 +5,16 @@ import { HomeStyle } from "./homestyled"
 import CenterNav from "@components/home/centerNav/centerNav"
 import Swipers from "@components/home/swiper/swiper"
 import SwiperList from "@components/home/swiperList/swiperList"
-import { home_api } from "@api/home.js"
 import { mapStateToProps, mapDispatchToProps } from "./connect"
 import { connect } from "react-redux"
 import BScrollComponent from "@common/bscroll/index"
-
+import CountDown from "@components/home/countdown/countdown"
 class Home extends Component {
     constructor(props) {
         super(props);
     }
     render() {
-        let { arr, arr0, arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13, arr14, arr15,navListLeft,navListRight} = this.props
+        let { arr, arr0, arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13, arr14, arr15} = this.props
         return (
             <Fragment>
                 <Header />
@@ -23,8 +22,9 @@ class Home extends Component {
                     {/* 头部 */}
                     {/* ---------------------------- */}
                     <HomeStyle>
-                        <div ref="wrapscroll"  className="wrapscroll">
-                        <BScrollComponent ref="scrolltop">
+                        <div  >
+                        <BScrollComponent ref="scrolltop" >
+                            <div ref="height">
                             {/*  */}
 
                             <Swipers array={arr} />
@@ -59,7 +59,7 @@ class Home extends Component {
                             <div>
 
                                 <div className="home-shortcunicons-animated"><img
-                                    src="http://pic2.34580.cn/group1/M00/F2/1A/wKgNY11eg_CACCV5AAJTRvB_SBU275.gif" />
+                                    src="http://pic2.34580.cn/group1/M00/E0/BE/wKgNYl1kbkWABjwFAAM6tC4CyE4614.gif" />
                                 </div>
 
                             </div>
@@ -72,6 +72,7 @@ class Home extends Component {
                             </section>
 
                             {/*  */}
+                            <CountDown  title="限时抢购"  timeCount="2019/8/31 00:00:00"/>
                             <SwiperList swiperListArr={arr9} />
                             {/*  */}
 
@@ -148,14 +149,15 @@ class Home extends Component {
                             </div>
                             {/*  */}
                             <Swipers array={arr7} />
-                            <SwiperList swiperListArr={arr9} />
+                            <SwiperList swiperListArr={arr13} />
                             {/*  */}
                             <img src="https://wechatx.34580.com/static/img/home_bot_logo.61ac9c6.png" className="home-bottom-logo is-download"></img>
+                            </div>
                         </BScrollComponent>
                         </div>
-                        {/* <div className="rightbotNav" onClick={this.props.clickHandler.bind(this)}>
+                        <div className="rightbotNav" onClick={this.props.clickHandler.bind(this)}>
                             <span>︿</span>
-                        </div> */}
+                        </div>
                     </HomeStyle>
                 </Page>
             </Fragment>

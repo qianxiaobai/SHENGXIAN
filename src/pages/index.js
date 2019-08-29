@@ -6,13 +6,13 @@ const Home = Loadable({
     loading:Loading
 })
 
-const Find = Loadable({
-    loader:()=>import("./find"),
+const Cart = Loadable({
+    loader:()=>import("./cart"),
     loading:Loading
 })
 
-const Order = Loadable({
-    loader:()=>import("./order"),
+const Car = Loadable({
+    loader:()=>import("./car"),
     loading:Loading
 })
 
@@ -25,12 +25,36 @@ const Login = Loadable({
     loader:()=>import("./login"),
     loading:Loading
 })
+const Register = Loadable({
+    loader:()=>import("./Register"),
+    loading:Loading
+})
+const HomeDetail = Loadable({
+    loader:()=>import("./homedetail/homedetail"),
+    loading:Loading
+})
 
-
+const Detail = Loadable({
+    loader:()=>import("./detail"),
+    loading:Loading
+})
+const Product = Loadable({
+    loader:()=>import("./product"),
+    loading:Loading
+})
+const Search = Loadable({
+    loader:()=>import("./search/search.js"),
+    loading:Loading
+})
 export {
     Home,
-    Find,
-    Order,
     Mine,
-    Login
+    Login,
+    Register,
+    HomeDetail,
+    Cart,
+    Car,
+    Detail,
+    Product,
+    Search
 }

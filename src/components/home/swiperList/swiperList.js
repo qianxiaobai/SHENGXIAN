@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
 import { SwiperListStyle } from "./styled"
-export default class componentName extends Component {
+import { connect } from "react-redux"
+import {withRouter} from "react-router-dom"
+class SwiperList extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        let { swiperListArr } = this.props
+        let { swiperListArr} = this.props
         return (
             <SwiperListStyle>
                 <div className="mn-card floor-padding">
-                    <div className="mn-card-item home-floor-slide-products">
+                    <div className="mn-card-item home-floor-slide-products">     
                         <div className="home-floor-slide-products-container">
+                            <div className="aaaaaa">
                             {
                                 swiperListArr.map((item, index) => (
-                                    <div className="home-floor-slide-products-item intersection-product-item"  key={index}>
-                                        <div className="freshes-image productslice-img">
-                                            <img className="freshes-image-source is-active" src="http://picpro-sz.34580.com/sh/ImageUrl/157996/160.jpeg" />
+                                    
+                                    <div className="home-floor-slide-products-item intersection-product-item"  key={index} >
+                                        <div className="freshes-image productslice-img" onClick={this.props.clickHandler.bind(this,item.ProductId)}>
+                                            <img className="freshes-image-source is-active" src="http://picpro-sz.34580.com/sh/ImageUrl/532949/500.jpeg" />
                                         </div>
                                         <div className="name">{item.ProductName}</div>
                                         <div className="activity-label">
@@ -35,6 +39,7 @@ export default class componentName extends Component {
                                 ))
                             }
                         </div>
+                        </div>
                     </div>
                 </div>
             </SwiperListStyle>
@@ -42,3 +47,11 @@ export default class componentName extends Component {
         )
     }
 }
+const  mapStateToProps =(state)=>({})
+const  mapDispatchToProps =(dispatch)=>({
+    clickHandler(id){
+        console.log(id)
+        this.props.history.push({pathname:"/homedetail",query:{id:id}})
+    }
+})
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SwiperList))

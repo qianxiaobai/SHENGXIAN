@@ -1,6 +1,6 @@
 
 
-import {homeAsynsAction,centerAsynsAction}  from "@actions/actionsCreater"
+import {homeAsynsAction,centerAsynsAction,homeDetailAsync}  from "@actions/actionsCreater"
  
 export const  mapStateToProps =(state)=>({
     navListLeft :state.homeStore.navListLeft,
@@ -30,16 +30,16 @@ export const  mapDispatchToProps =(dispatch)=>({
     homeState(){
         dispatch(homeAsynsAction())
         dispatch(centerAsynsAction())
+        dispatch(homeDetailAsync())
     },
 
     clickHandler(){
-        // let div =this.refs.wrapscroll
-        // console.log(div.querySelector(".wrapscroll"))
-        // console.log(div.offsetTop)
-        // // div.offsetTop=0px;
-        // console.log(this.refs.scrolltop.scroll.scrollTo)
-        // this.refs.scrolltop.scroll.scrollTo(0,-div.offsetTop)
-    }
+
+        let height = this.refs.height.getBoundingClientRect().top
+        this.refs.scrolltop.scroll.scrollTo(0,-height)
+        console.log(this.refs.height.getBoundingClientRect().top)
+     
+    },
 
 
 
